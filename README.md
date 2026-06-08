@@ -19,7 +19,14 @@ resnet_food_project/
 └── instance/               # Application-specific configuration files
     └── history.db         
 ```
+## Features
 
+- Fast food image classification using ResNet34
+- Web-based user interface built with Flask
+- Real-time prediction and confidence score display
+- Calorie estimation using USDA FNDDS nutritional data
+- Support for five food categories: Burger, Donut, Fries, Pizza, and Taco
+  
 ## Quick Start
 
 ### Step 1: Setup Environment
@@ -219,7 +226,7 @@ CALORIE_TABLE = {
 
 ## Common Issues
 
-### Issue 1: "Model file tidak ditemukan"
+### Issue 1: "Model file not found"
 
 **Solution:**
 ```bash
@@ -372,25 +379,7 @@ This model was trained on food images from:
 - **Dataset**: Fast food images (Burger, Donut, Pizza, Fries, Taco)
 - **Dataset Source**: Roboflow Fast Food Classification Dataset
 - **Classes**: 5 (balanced)
-- **Split**: 70% train, 15% val, 15% test
-
-Validation results:
-```
-burger → burger (96.2%)
-donut  → donut  (90.3%)
-fries  → fries  (92.7%)
-pizza  → pizza  (93.9%)
-taco   → taco   (91.5%)
-```
-
----
-## Features
-
-- Fast food image classification using ResNet34
-- Web-based user interface built with Flask
-- Real-time prediction and confidence score display
-- Calorie estimation using USDA FNDDS nutritional data
-- Support for five food categories: Burger, Donut, Fries, Pizza, and Taco
+- **Split**: 76% train, 17% val, 7% test
 
 ---
 ## Support
