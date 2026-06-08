@@ -1,20 +1,23 @@
-# 🍔 ResNet34 Food Classification - Flask App
+# 🍔 Deep Learning-Based Fast Food Detection for Web-Based Calorie Estimation
 
 Complete Flask application dengan HTML frontend + PyTorch ResNet34 model untuk food classification dan calorie estimation.
 
 ## 📂 File Structure
 
 ```
-project/
-├── app.py                    # Main Flask application
-├── debug_helper.py           # Debugging tool
-├── requirements.txt          # Python dependencies
-├── resnet_model.pth         # Model checkpoint (must be in same directory)
+resnet_food_project/
+├── app.py                  # Core Flask application for food classification and calorie estimation
+├── debug_helper.py         # Utility script for model verification and debugging
+├── quick_check.py          # Script for quick functionality testing
+├── requirements.txt        # Required Python packages
+├── resnet_model.pth        # Pre-trained ResNet34 model weights
+├── README.md               # Project documentation
 ├── templates/
-│   └── index.html           # Frontend (real predictions)
-├── DEBUGGING_GUIDE.md       # Detailed debugging guide
-└── README.md                # This file
+│   └── index.html          # Web interface for image upload and prediction results
+└── instance/               # Application-specific configuration files
+    └── history.db         
 ```
+This project is a web-based application that uses a deep learning model (ResNet34) to classify fast food images and estimate their calorie content. The system recognizes five food categories: Burger, Donut, Fries, Pizza, and Taco, and provides calorie estimation based on predefined nutritional references.
 
 ## 🚀 Quick Start
 
@@ -60,8 +63,6 @@ python debug_helper.py --test-image burger.jpg
 - ✓ Model architecture correct
 - ✓ Preprocessing config correct
 - ✓ Class names order correct
-
-If any check fails, see **DEBUGGING_GUIDE.md**
 
 ### Step 4: Run Flask App
 
@@ -205,11 +206,11 @@ MODEL_PATH = "resnet_model.pth"
 
 # Calorie lookup table (from FNDDS dataset)
 CALORIE_TABLE = {
-    'burger': 295,
-    'donut': 452,
-    'pizza': 285,
-    'fries': 312,
-    'taco': 226
+    'burger': 280.129,
+    'donut': 412.538,
+    'pizza': 264.022,
+    'fries': 220.250,
+    'taco': 210.815
 }
 ```
 
@@ -239,7 +240,6 @@ python debug_helper.py
 # 2. Test with known image
 python debug_helper.py --test-image burger.jpg
 
-# 3. Read DEBUGGING_GUIDE.md for systematic debugging
 ```
 
 Most common cause: **CLASS_NAMES order is wrong**
@@ -369,7 +369,7 @@ docker run -p 5000:5000 food-classifier
 
 This model was trained on food images from:
 - **Dataset**: Fast food images (Burger, Donut, Pizza, Fries, Taco)
-- **Source**: Custom dataset from Roboflow
+- **Dataset Source**: Roboflow Fast Food Classification Dataset
 - **Classes**: 5 (balanced)
 - **Split**: 70% train, 15% val, 15% test
 
@@ -383,7 +383,15 @@ taco   → taco   (91.5%)
 ```
 
 ---
+## 🎯 Features
 
+- Fast food image classification using ResNet34
+- Web-based user interface built with Flask
+- Real-time prediction and confidence score display
+- Calorie estimation using USDA FNDDS nutritional data
+- Support for five food categories: Burger, Donut, Fries, Pizza, and Taco
+
+---
 ## 🤝 Support
 
 If predictions are wrong:
@@ -403,18 +411,17 @@ If predictions are wrong:
    python debug_helper.py --test-image burger.jpg
    ```
 
-4. **Read DEBUGGING_GUIDE.md** for detailed systematic debugging
-
 ---
 
 ## 📄 License & Attribution
 
-- **Model**: ResNet34 (torchvision)
-- **Dataset**: FNDDS (USDA)
-- **Frontend**: Custom HTML/CSS/JavaScript
+- Model Architecture: ResNet34 (TorchVision)
+- Image Dataset: Roboflow Fast Food Classification Dataset
+- Calorie Reference: USDA FNDDS Dataset
+- Frontend: HTML, CSS, JavaScript
 
 ---
 
-**Last Updated**: 2024
+**Last Updated**: 2026
 **Model Version**: v1.0
 **Python Version**: 3.8+
