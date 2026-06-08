@@ -2,6 +2,8 @@
 
 Complete Flask application dengan HTML frontend + PyTorch ResNet34 model untuk food classification dan calorie estimation.
 
+This project is a web-based application that uses a deep learning model (ResNet34) to classify fast food images and estimate their calorie content. The system recognizes five food categories: Burger, Donut, Fries, Pizza, and Taco, and provides calorie estimation based on predefined nutritional references.
+
 ## File Structure
 
 ```
@@ -17,7 +19,6 @@ resnet_food_project/
 └── instance/               # Application-specific configuration files
     └── history.db         
 ```
-This project is a web-based application that uses a deep learning model (ResNet34) to classify fast food images and estimate their calorie content. The system recognizes five food categories: Burger, Donut, Fries, Pizza, and Taco, and provides calorie estimation based on predefined nutritional references.
 
 ## Quick Start
 
