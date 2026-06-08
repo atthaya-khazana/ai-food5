@@ -1,8 +1,8 @@
-# 🍔 Deep Learning-Based Fast Food Detection for Web-Based Calorie Estimation
+# Deep Learning-Based Fast Food Detection for Web-Based Calorie Estimation
 
 Complete Flask application dengan HTML frontend + PyTorch ResNet34 model untuk food classification dan calorie estimation.
 
-## 📂 File Structure
+## File Structure
 
 ```
 resnet_food_project/
@@ -19,7 +19,7 @@ resnet_food_project/
 ```
 This project is a web-based application that uses a deep learning model (ResNet34) to classify fast food images and estimate their calorie content. The system recognizes five food categories: Burger, Donut, Fries, Pizza, and Taco, and provides calorie estimation based on predefined nutritional references.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Step 1: Setup Environment
 
@@ -102,7 +102,7 @@ Upload a food image and see predictions!
 
 ---
 
-## 🔍 API Endpoints
+## API Endpoints
 
 ### GET `/`
 Frontend HTML interface
@@ -192,7 +192,7 @@ Response:
 
 ---
 
-## 🛠️ Configuration
+## Configuration
 
 Edit `app.py` to change:
 
@@ -216,7 +216,7 @@ CALORIE_TABLE = {
 
 ---
 
-## ⚠️ Common Issues
+## Common Issues
 
 ### Issue 1: "Model file tidak ditemukan"
 
@@ -246,8 +246,8 @@ Most common cause: **CLASS_NAMES order is wrong**
 
 Saat training dengan ImageFolder, PyTorch otomatis menggunakan alphabetical order:
 ```
-✅ CORRECT:  ['burger', 'donut', 'fries', 'pizza', 'taco']
-❌ WRONG:    ['taco', 'pizza', 'fries', 'donut', 'burger']
+CORRECT:  ['burger', 'donut', 'fries', 'pizza', 'taco']
+WRONG:    ['taco', 'pizza', 'fries', 'donut', 'burger']
 ```
 
 ### Issue 3: "CUDA out of memory"
@@ -271,7 +271,7 @@ DEVICE = torch.device("cpu")  # Instead of 'cuda'
 
 ---
 
-## 📊 Frontend Features
+## Frontend Features
 
 - **Real-time predictions** - Upload image, get instant results
 - **Confidence display** - Shows prediction confidence percentage
@@ -282,7 +282,7 @@ DEVICE = torch.device("cpu")  # Instead of 'cuda'
 
 ---
 
-## 🔬 Debug Mode
+## Debug Mode
 
 The HTML frontend includes debug mode that shows all class probabilities:
 
@@ -304,7 +304,7 @@ This helps verify if predictions are correct.
 
 ---
 
-## 📚 Training Model Reference
+## Training Model Reference
 
 The model was trained with:
 - **Architecture**: ResNet34 (pretrained on ImageNet, backbone frozen)
@@ -316,7 +316,7 @@ The model was trained with:
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 ### Local Testing
 ```bash
@@ -347,7 +347,7 @@ docker run -p 5000:5000 food-classifier
 
 ---
 
-## 📈 Performance Tips
+## Performance Tips
 
 1. **GPU acceleration** - Use CUDA if available
    ```python
@@ -365,7 +365,7 @@ docker run -p 5000:5000 food-classifier
 
 ---
 
-## 📝 Training & Validation Data
+## Training & Validation Data
 
 This model was trained on food images from:
 - **Dataset**: Fast food images (Burger, Donut, Pizza, Fries, Taco)
@@ -383,7 +383,7 @@ taco   → taco   (91.5%)
 ```
 
 ---
-## 🎯 Features
+## Features
 
 - Fast food image classification using ResNet34
 - Web-based user interface built with Flask
@@ -392,7 +392,7 @@ taco   → taco   (91.5%)
 - Support for five food categories: Burger, Donut, Fries, Pizza, and Taco
 
 ---
-## 🤝 Support
+## Support
 
 If predictions are wrong:
 
@@ -413,7 +413,7 @@ If predictions are wrong:
 
 ---
 
-## 📄 License & Attribution
+## License & Attribution
 
 - Model Architecture: ResNet34 (TorchVision)
 - Image Dataset: Roboflow Fast Food Classification Dataset
