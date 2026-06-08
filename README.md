@@ -245,7 +245,7 @@ python debug_helper.py --test-image burger.jpg
 
 Most common cause: **CLASS_NAMES order is wrong**
 
-Saat training dengan ImageFolder, PyTorch otomatis menggunakan alphabetical order:
+During training with ImageFolder, PyTorch automatically assigns class labels in alphabetical order.
 ```
 CORRECT:  ['burger', 'donut', 'fries', 'pizza', 'taco']
 WRONG:    ['taco', 'pizza', 'fries', 'donut', 'burger']
